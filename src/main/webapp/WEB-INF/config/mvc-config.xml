@@ -39,7 +39,7 @@
     <bean class="org.springframework.web.servlet.view.XmlViewResolver">
         <property name="order" value="0" />
         <property name="location">
-            <value>/WEB-INF/config/upload-files-config.xml</value>
+            <value>/WEB-INF/config/files-type-config.xml</value>
         </property>
     </bean>
 
