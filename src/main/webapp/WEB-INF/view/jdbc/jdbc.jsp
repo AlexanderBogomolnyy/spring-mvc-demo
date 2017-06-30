@@ -5,6 +5,12 @@
 
 <page:template>
     <jsp:body>
+        <c:url value="/jdbcQueryAllUsers" var="jdbcQueryAllUsers" />
+        <c:url value="/jdbcInsert" var="jdbcInsert" />
+        <c:url value="/jdbcSelectLogs" var="jdbcSelectLogs" />
+        <c:url value="/jdbcDelete" var="jdbcDelete" />
+        <c:url value="/jdbcUpdate" var="jdbcUpdate" />
+
         <!-- Page Content -->
         <div class="container">
 

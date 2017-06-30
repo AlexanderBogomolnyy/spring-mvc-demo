@@ -6,9 +6,8 @@
 <%@attribute name="title" fragment="true" %>
 
 <head>
-    <title>
-        <jsp:invoke fragment="title"/>
-    </title>
+
+    <title><jsp:invoke fragment="title"/></title>
 
     <!-- Bootstrap Core CSS -->
     <spring:url value="/resources/css/bootstrap.css" var="bootstrap"/>
@@ -50,7 +49,14 @@
                     <ul class="dropdown-menu">
                         <c:url value="/file.html" var="file"/>
                         <li>
-                            <a href="${file}">Загрузка файла PDF и Excel</a>
+                            <a href="${file}">File download example</a>
+                        </li>
+                        <c:url value="/jdbc.html" var="jdbc"/>
+                        <li>
+                            <a href="${jdbc}">Spring JDBC example</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-1-col.html">Lesson 1</a>
                         </li>
                         <li>
                             <a href="portfolio-2-col.html">Lesson 2</a>
@@ -59,10 +65,7 @@
                             <a href="portfolio-3-col.html">Lesson 3</a>
                         </li>
                         <li>
-                            <a href="portfolio-4-col.html">Lesson 5</a>
-                        </li>
-                        <li>
-                            <a href="portfolio-item.html">Lesson 5</a>
+                            <a href="portfolio-4-col.html">Lesson 4</a>
                         </li>
                     </ul>
                 </li>
@@ -73,9 +76,7 @@
     <!-- /.container -->
 </nav>
 
-
 <jsp:doBody/>
-
 
 <div class="container">
     <!-- Footer -->
