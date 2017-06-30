@@ -55,6 +55,10 @@
                         <li>
                             <a href="${jdbc}">Spring JDBC example</a>
                         </li>
+                        <c:url value="/email.html" var="email"/>
+                        <li>
+                            <a href="${email}">Send Email example</a>
+                        </li>
                         <li>
                             <a href="portfolio-1-col.html">Lesson 1</a>
                         </li>
@@ -63,9 +67,6 @@
                         </li>
                         <li>
                             <a href="portfolio-3-col.html">Lesson 3</a>
-                        </li>
-                        <li>
-                            <a href="portfolio-4-col.html">Lesson 4</a>
                         </li>
                     </ul>
                 </li>

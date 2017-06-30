@@ -117,6 +117,12 @@
             <artifactId>spring-jdbc</artifactId>
         </dependency>
 
+        <!--Contains org.springframework.mail.javamail-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
         <!-- Spring MVC Mail Related Dependency -->
         <dependency>
             <groupId>javax.mail</groupId>
