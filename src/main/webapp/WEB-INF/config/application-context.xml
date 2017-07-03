@@ -62,7 +62,7 @@
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" >
         <!--packagesToScan - search Entity and mapping them -->
-        <property name="packagesToScan" value="ua.kiev.allexb.mvc.bean" />
+        <property name="packagesToScan" value="ua.kiev.allexb.mvc.model" />
         <property name="dataSource" ref="dataSource" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
