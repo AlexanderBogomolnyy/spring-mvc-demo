@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.*;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ua.kiev.allexb.mvc.model.User;
 
@@ -31,7 +30,7 @@ public class ORMService {
     }
 
     public boolean updateUser(int id, boolean enabled) {
-        System.out.println("ORMService updateUser is called");
+        System.out.println("ORMService updateUser(id,enabled) is called");
 
         String query = "UPDATE user SET enabled = ? WHERE iduser = ?";
         Query nativeQuery = entityManager.createNativeQuery(query);
@@ -41,8 +40,25 @@ public class ORMService {
         return result > 0; // result show how many rows was updated.
     }
 
+    public boolean updateUser(User user) {
+        System.out.println("ORMService updateUser(user) is called");
+
+        String query = "UPDATE user SET username=:userName, password=:userPassword, enabled=:isEnabled " +
+                "WHERE iduser=:idUser";
+        Query nativeQuery = entityManager.createNativeQuery(query);
+        nativeQuery.setParameter("userName", user.getUsername());
+        nativeQuery.setParameter("userPassword", user.getPassword());
+        nativeQuery.setParameter("isEnabled", user.isEnabled());
+        nativeQuery.setParameter("idUser", user.getIdUser());
+
+        System.out.println(user);
+
+        int result = nativeQuery.executeUpdate();
+        return result > 0; // result show how many rows was updated.
+    }
+
     public boolean insertUser(String username, String password, boolean enabled) {
-        System.out.println("ORMExample insertUser is called");
+        System.out.println("ORMExample insertUser(username, password, enabled) is called");
 
         String qlString = "INSERT INTO user (username,password,enabled) VALUES (?,?,?)";
         Query query = entityManager.createNativeQuery(qlString);
@@ -51,6 +67,12 @@ public class ORMService {
         query.setParameter(3, enabled);
         int result = query.executeUpdate();
         return result > 0;
+    }
+
+    public boolean insertUser(User user) {
+        System.out.println("ORMExample insertUser(user) is called");
+
+        return this.insertUser(user.getUsername(), user.getPassword(), user.isEnabled());
     }
 
     public boolean deleteUser(int idUser) {

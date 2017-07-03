@@ -3,7 +3,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 @Table(name = "USER")
 public class User {
@@ -26,6 +29,7 @@ public class User {
     @Column(name="ENABLED")
     private boolean enabled;
 
+    @XmlElement
     public int getIdUser() {
         return idUser;
     }
@@ -34,6 +38,7 @@ public class User {
         this.idUser = idUser;
     }
 
+    @XmlElement
     public String getUsername() {
         return username;
     }
@@ -42,6 +47,7 @@ public class User {
         this.username = username;
     }
 
+    @XmlElement
     public String getPassword() {
         return password;
     }
@@ -50,6 +56,7 @@ public class User {
         this.password = password;
     }
 
+    @XmlElement
     public boolean isEnabled() {
         return enabled;
     }

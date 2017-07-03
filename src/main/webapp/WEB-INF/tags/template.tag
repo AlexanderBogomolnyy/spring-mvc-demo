@@ -63,6 +63,10 @@
                         <li>
                             <a href="${orm}">ORM example</a>
                         </li>
+                        <c:url value="/rest.html" var="rest"/>
+                        <li>
+                            <a href="${rest}">REST example</a>
+                        </li>
                         <li>
                             <a href="portfolio-1-col.html">Lesson 1</a>
                         </li>
