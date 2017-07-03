@@ -1,5 +1,7 @@
 package ua.kiev.allexb.mvc.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,20 +17,22 @@ import java.util.List;
 @Controller
 public class ORMController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ORMController.class);
+
     @Autowired
     private ORMService ormService;
 
     @RequestMapping(value = "/ormFindAllUsers", method= RequestMethod.GET)
     public ModelAndView ormFindAllUsers() {
-        System.out.println("ORMController ormFindAllUsers is called");
-        List<User> users = ormService.queryFindAllUsersJPA();
+        LOGGER.info("ORMController ormFindAllUsers is called");
+        List<User> users = ormService.findAllUsersJPA();
         return new ModelAndView("/orm/orm", "resultObject", users);
     }
 
     @RequestMapping(value = "/queryFindByIdUser/{userid}", method = RequestMethod.GET)
     public ModelAndView queryFindByIdUser(@PathVariable("userid") int userid) {
-        System.out.println("ORMController queryFindByIdUser is called");
-        User user = ormService.queryFindUserById(userid);
+        LOGGER.info("ORMController queryFindByIdUser is called");
+        User user = ormService.findUserById(userid);
         return new ModelAndView("/orm/orm", "resultObject", user);
     }
 
@@ -36,13 +40,13 @@ public class ORMController {
     public ModelAndView ormUpdateUser(
             @PathVariable(value="iduser") int iduser,
             @PathVariable(value="enabled") boolean enabled) {
-        System.out.println("ORMController ormUpdateUser is called");
+        LOGGER.info("ORMController ormUpdateUser is called");
         boolean result = ormService.updateUser(iduser, enabled);
         return new ModelAndView("/orm/orm", "resultObject", result);
     }
     @RequestMapping(value = "/ormDeleteUser/iduser/{iduser}", method=RequestMethod.GET)
     public ModelAndView ormDeleteUser(@PathVariable(value="iduser") int iduser) {
-        System.out.println("ORMController jdbcDelete is called");
+        LOGGER.info("ORMController jdbcDelete is called");
         boolean result = ormService.deleteUser(iduser);
         return new ModelAndView("/orm/orm", "resultObject", result);
     }
@@ -53,12 +57,12 @@ public class ORMController {
             @PathVariable(value="username") String username,
             @PathVariable(value="password") String password,
             @PathVariable(value="enabled") boolean enabled) {
-        System.out.println("ORMController ormInsertUser is called");
+        LOGGER.info("ORMController ormInsertUser is called");
         boolean result = false;
         try {
             result = ormService.insertUser(username, password, enabled);
         } catch (PersistenceException ex) {
-            System.out.println("An user with the same parameters is already exists.");
+            LOGGER.error("An user with the same parameters is already exists.", ex);
         }
         return new ModelAndView("/orm/orm", "resultObject", result);
     }
