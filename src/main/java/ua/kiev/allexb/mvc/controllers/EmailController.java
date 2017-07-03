@@ -1,5 +1,7 @@
 package ua.kiev.allexb.mvc.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,12 +18,14 @@ import java.util.Map;
 @Controller
 public class EmailController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(EmailController.class);
+
     @Autowired
-    EmailService emailService;
+    private EmailService emailService;
 
     @RequestMapping(value = "/email/send", method = RequestMethod.POST)
     public ModelAndView email(@ModelAttribute("emailModel") EmailModel emailModel) {
-        System.out.println("EmailController email is called");
+        LOGGER.info("EmailController email is called");
         Map<String, Object> model = new HashMap<>();
         model.put("from", "demo.spring@mvc.app");
         model.put("subject", "Hello from " + emailModel.getName() + "!");
