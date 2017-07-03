@@ -67,6 +67,10 @@
                         <li>
                             <a href="${rest}">REST example</a>
                         </li>
+                        <c:url value="/runtimeException" var="exception"/>
+                        <li>
+                            <a href="${exception}">Runtime Exception example</a>
+                        </li>
                         <li>
                             <a href="portfolio-1-col.html">Lesson 1</a>
                         </li>
