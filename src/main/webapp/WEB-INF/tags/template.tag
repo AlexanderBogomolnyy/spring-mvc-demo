@@ -59,14 +59,19 @@
                         <li>
                             <a href="${email}">Send Email example</a>
                         </li>
+                        <c:url value="/orm.html" var="orm"/>
+                        <li>
+                            <a href="${orm}">ORM example</a>
+                        </li>
+                        <c:url value="/rest.html" var="rest"/>
+                        <li>
+                            <a href="${rest}">REST example</a>
+                        </li>
                         <li>
                             <a href="portfolio-1-col.html">Lesson 1</a>
                         </li>
                         <li>
                             <a href="portfolio-2-col.html">Lesson 2</a>
-                        </li>
-                        <li>
-                            <a href="portfolio-3-col.html">Lesson 3</a>
                         </li>
                     </ul>
                 </li>

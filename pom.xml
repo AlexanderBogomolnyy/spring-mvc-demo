@@ -18,6 +18,16 @@
         <jstl.version>1.2</jstl.version>
         <servlet.version>3.1.0</servlet.version>
 
+        <!-- jackson json JSON Processing API -->
+        <jackson.databind-version>2.8.9</jackson.databind-version>
+
+        <!-- Hibernate / JPA -->
+        <hibernate.version>5.2.10.Final</hibernate.version>
+        <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
+
+        <!-- Spring Data -->
+        <spring-framework.data.version>1.11.4.RELEASE</spring-framework.data.version>
+
         <!-- Spring -->
         <spring-framework.version>4.3.9.RELEASE</spring-framework.version>
 
@@ -63,14 +73,12 @@
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
         </dependency>
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>${servlet.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
@@ -133,6 +141,34 @@
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>${velocity.version}</version>
+        </dependency>
+
+        <!-- Spring REST jackson JSON Processing API -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.databind-version}</version>
+        </dependency>
+
+        <!--Hibernate ORM-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <!--Hibernate validator (contains @NotEmpty)-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+
+        <!--Spring Data-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-framework.data.version}</version>
         </dependency>
 
         <!-- JUnit tests -->
