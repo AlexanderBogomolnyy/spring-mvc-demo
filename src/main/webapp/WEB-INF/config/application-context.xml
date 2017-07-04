@@ -96,7 +96,7 @@
     <!-- Quartz cron trigger -->
     <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="quartzCronJob"/>
-        <property name="cronExpression" value="0/7 * * * * ?" />
+        <property name="cronExpression" value="* 0/7 * * * ?" />
         <!-- every 30 seconds (seconds, minutes, hours, day of month, month, day of week, year(optional)) -->
     </bean>
 
