@@ -66,4 +66,13 @@
     <mvc:view-controller path="/rest.html" view-name="/rest/rest"/>
     <mvc:view-controller path="/orm.html" view-name="/orm/orm"/>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/interceptorCall/*"/>
+            <!--need to use ' /** ' not ' /* ' if you want to intercept all requests.-->
+            <!--<mvc:mapping path="/**"/>-->
+            <bean class="ua.kiev.allexb.mvc.interceptors.SiteInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
