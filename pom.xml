@@ -31,6 +31,9 @@
         <!-- Spring -->
         <spring-framework.version>4.3.9.RELEASE</spring-framework.version>
 
+        <!-- Quartz scheduling framework -->
+        <quartz.scheduling.version>2.3.0</quartz.scheduling.version>
+
         <!-- Mail agent -->
         <mailagent.version>1.4.7</mailagent.version>
 
@@ -170,6 +173,13 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>${spring-framework.data.version}</version>
+        </dependency>
+
+        <!-- Quartz scheduling framework -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.scheduling.version}</version>
         </dependency>
 
         <!-- JUnit tests -->
