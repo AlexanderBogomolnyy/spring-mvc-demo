@@ -5,11 +5,12 @@
 
 <page:template>
     <jsp:body>
+        <c:url value="/index.html" var="home" />
         <c:url value="/jdbcQueryAllUsers" var="jdbcQueryAllUsers" />
-        <c:url value="/jdbcInsert" var="jdbcInsert" />
+        <c:url value="/jdbcInsert/logString/jdbcTestLogString" var="jdbcInsert" />
         <c:url value="/jdbcSelectLogs" var="jdbcSelectLogs" />
-        <c:url value="/jdbcDelete" var="jdbcDelete" />
-        <c:url value="/jdbcUpdate" var="jdbcUpdate" />
+        <c:url value="/jdbcDelete/user/8" var="jdbcDelete" />
+        <c:url value="/jdbcUpdate/user/username/user@allexb.kiev.ua/enabled/false" var="jdbcUpdate" />
 
         <!-- Page Content -->
         <div class="container">
@@ -21,7 +22,7 @@
                         <small>JDBCTemplate</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a>
+                        <li><a href="${home}">Home</a>
                         </li>
                         <li class="active">JDBC sidebar page</li>
                     </ol>
@@ -34,13 +35,12 @@
                 <!-- Sidebar Column -->
                 <div class="col-md-3">
                     <div class="list-group">
-
-                        <a href="index.html" class="list-group-item">Home</a>
-                        <a href="${jdbcQueryAllUsers}" class="list-group-item">get all users</a>
-                        <a href="${jdbcInsert}/logstring/jdbcTestLogString" class="list-group-item">Jdbc insert</a>
+                        <a href="${home}" class="list-group-item">Home</a>
+                        <a href="${jdbcQueryAllUsers}" class="list-group-item">Get all users</a>
+                        <a href="${jdbcInsert}" class="list-group-item">Jdbc insert</a>
                         <a href="${jdbcSelectLogs}" class="list-group-item">Select all Logs</a>
-                        <a href="${jdbcDelete}/user/8" class="list-group-item">Delete User</a>
-                        <a href="${jdbcUpdate}/user/username/user@javastudy.ru/enabled/false" class="list-group-item">Update User</a>
+                        <a href="${jdbcDelete}" class="list-group-item">Delete User</a>
+                        <a href="${jdbcUpdate}" class="list-group-item">Update User</a>
                     </div>
                 </div>
                 <!-- Content Column -->

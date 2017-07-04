@@ -6,33 +6,43 @@ import java.io.Serializable;
 public class DBLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private int IDLOG;
-    private String LOGSTRING;
+    private int idLog;
+    private String logString;
 
     public DBLog() {
     }
 
+    public DBLog(String logString) {
+        this.logString = logString;
+    }
+
     public DBLog (int idLog, String logString) {
-        this.IDLOG = idLog;
-        this.LOGSTRING = logString;
+        this(logString);
+        this.idLog = idLog;
     }
 
-    public int getIDLOG() {
-        return IDLOG;
-    }
-
-    @XmlElement
-    public void setIDLOG(int iDLOG) {
-        IDLOG = iDLOG;
-    }
-
-    public String getLOGSTRING() {
-        return LOGSTRING;
+    public int getIdLog() {
+        return idLog;
     }
 
     @XmlElement
-    public void setLOGSTRING(String lOGSTRING) {
-        LOGSTRING = lOGSTRING;
+    public void setIdLog(int iDLOG) {
+        idLog = iDLOG;
     }
 
+    public String getLogString() {
+        return logString;
+    }
+
+    @XmlElement
+    public void setLogString(String lOGSTRING) {
+        logString = lOGSTRING;
+    }
+
+    @Override
+    public String toString() {
+        return "DBLog{" +
+                "ID : " + idLog +
+                "; LOG : " + logString + '}';
+    }
 }

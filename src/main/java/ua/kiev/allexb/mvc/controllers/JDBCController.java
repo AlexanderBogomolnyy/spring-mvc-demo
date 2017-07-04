@@ -34,7 +34,7 @@ public class JDBCController {
     public ModelAndView jdbcInsert(@PathVariable(value="logstring") String logstring) {
         LOGGER.info("JDBCController jdbcInsert is called");
         DBLog dblog = new DBLog();
-        dblog.setLOGSTRING(logstring);
+        dblog.setLogString(logstring);
         boolean result = jdbcExample.insertLog(dblog);
         return new ModelAndView("/jdbc/jdbc", "resultObject", result);
     }
