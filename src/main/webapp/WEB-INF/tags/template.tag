@@ -49,33 +49,34 @@
                     <ul class="dropdown-menu">
                         <c:url value="/file.html" var="file"/>
                         <li>
-                            <a href="${file}">File download example</a>
+                            <a href="${file}"><b>Lesson 1.</b> File download example</a>
                         </li>
                         <c:url value="/jdbc.html" var="jdbc"/>
                         <li>
-                            <a href="${jdbc}">Spring JDBC example</a>
+                            <a href="${jdbc}"><b>Lesson 2.</b> Spring JDBC example</a>
                         </li>
                         <c:url value="/email.html" var="email"/>
                         <li>
-                            <a href="${email}">Send Email example</a>
+                            <a href="${email}"><b>Lesson 3.</b> Send Email example</a>
                         </li>
                         <c:url value="/orm.html" var="orm"/>
                         <li>
-                            <a href="${orm}">ORM example</a>
+                            <a href="${orm}"><b>Lesson 4.</b> ORM example</a>
                         </li>
                         <c:url value="/rest.html" var="rest"/>
                         <li>
-                            <a href="${rest}">REST example</a>
+                            <a href="${rest}"><b>Lesson 4.</b> REST example</a>
                         </li>
                         <c:url value="/runtimeException" var="exception"/>
                         <li>
-                            <a href="${exception}">Runtime Exception example</a>
+                            <a href="${exception}"><b>Lesson 5.</b> Runtime Exception example</a>
+                        </li>
+                        <c:url value="/jstlReturnUsers" var="jstl"/>
+                        <li>
+                            <a href="${jstl}"><b>Lesson 6.</b> JSTL in Spring</a>
                         </li>
                         <li>
-                            <a href="portfolio-1-col.html">Lesson 1</a>
-                        </li>
-                        <li>
-                            <a href="portfolio-2-col.html">Lesson 2</a>
+                            <a href="./portfolio-1-col.html"><b>Lesson 7.</b></a>
                         </li>
                     </ul>
                 </li>
