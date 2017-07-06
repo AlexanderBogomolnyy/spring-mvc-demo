@@ -21,21 +21,21 @@
             <div class="carousel-inner">
                 <div class="item">
                     <div class="fill"
-                         style="background-image:url('${pageContext.request.contextPath}/resources/images/indexImage1.png');"></div>
+                         style="background-image:url('${pageContext.request.contextPath}/resources/images/index-carousel-01.png');"></div>
                     <div class="carousel-caption">
                         <h2>1</h2>
                     </div>
                 </div>
                 <div class="item active">
                     <div class="fill"
-                         style="background-image:url('${pageContext.request.contextPath}/resources/images/indexImage1.png');"></div>
+                         style="background-image:url('${pageContext.request.contextPath}/resources/images/index-carousel-01.png');"></div>
                     <div class="carousel-caption">
                         <h2>2</h2>
                     </div>
                 </div>
                 <div class="item">
                     <div class="fill"
-                         style="background-image:url('${pageContext.request.contextPath}/resources/images/indexImage1.png');"></div>
+                         style="background-image:url('${pageContext.request.contextPath}/resources/images/index-carousel-01.png');"></div>
                     <div class="carousel-caption">
                         <h2>3</h2>
                     </div>
@@ -115,19 +115,19 @@
                 <div class="col-md-4 col-sm-6">
                     <a href="${file}">
                         <img class="img-responsive img-portfolio img-hover"
-                             src="${pageContext.request.contextPath}/resources/images/PDF Excel.png" alt="">
+                             src="${pageContext.request.contextPath}/resources/images/pdf-excel-icons.png" alt="">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <a href="${orm}">
                         <img class="img-responsive img-portfolio img-hover"
-                             src="${pageContext.request.contextPath}/resources/images/spring hibernate.png" alt="">
+                             src="${pageContext.request.contextPath}/resources/images/spring-hibernate.png" alt="">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <a href="${email}">
                         <img class="img-responsive img-portfolio img-hover"
-                             src="${pageContext.request.contextPath}/resources/images/Java Api Mail.png" alt="">
+                             src="${pageContext.request.contextPath}/resources/images/java-mail-api.png" alt="">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -146,7 +146,7 @@
                 <div class="col-md-4 col-sm-6">
                     <a href="portfolio-item.html">
                         <img class="img-responsive img-portfolio img-hover"
-                             src="${pageContext.request.contextPath}/resources/images/Srping_Security.png" alt="">
+                             src="${pageContext.request.contextPath}/resources/images/spring-security.png" alt="">
                     </a>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                 </div>
                 <div class="col-md-6">
                     <img class="img-responsive"
-                         src="${pageContext.request.contextPath}/resources/images/springmvc angular.jpg" alt="">
+                         src="${pageContext.request.contextPath}/resources/images/springmvc-angular-desktop.jpg" alt="">
                 </div>
             </div>
             <!-- /.row -->
