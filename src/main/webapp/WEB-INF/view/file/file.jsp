@@ -52,7 +52,14 @@
 
             </div>
             <!-- /.row -->
-
+            <div class="row">
+                <br/>
+                    <%--Объект из примера scope.jstl--%>
+                <c:if test="${not empty sessionScope.sessionObject}">
+                    <p>Объект в области видимости session:</p>
+                    <b>${sessionScope.sessionObject}</b>
+                </c:if>
+            </div>
             <hr>
 
         </div>

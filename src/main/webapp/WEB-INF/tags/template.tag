@@ -80,8 +80,12 @@
                         <li>
                             <a href="${redirect}"><b>Lesson 7.</b> Redirect. External resource</a>
                         </li>
+                        <c:url value="/scopeSession" var="scope"/>
                         <li>
-                            <a href="./portfolio-1-col.html"><b>Lesson 8.</b></a>
+                            <a href="${scope}"><b>Lesson 8.</b> Bean scopes</a>
+                        </li>
+                        <li>
+                            <a href="./portfolio-1-col.html"><b>Lesson 9.</b></a>
                         </li>
                     </ul>
                 </li>
