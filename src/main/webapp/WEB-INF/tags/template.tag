@@ -84,8 +84,12 @@
                         <li>
                             <a href="${scope}"><b>Lesson 8.</b> Bean scopes</a>
                         </li>
+                        <c:url value="/readCookie" var="cookies"/>
                         <li>
-                            <a href="./portfolio-1-col.html"><b>Lesson 9.</b></a>
+                            <a href="${cookies}"><b>Lesson 9.</b> Cookie example</a>
+                        </li>
+                        <li>
+                            <a href="./portfolio-1-col.html"><b>Lesson 10.</b></a>
                         </li>
                     </ul>
                 </li>
