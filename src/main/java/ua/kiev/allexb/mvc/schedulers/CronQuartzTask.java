@@ -30,9 +30,9 @@ public class CronQuartzTask {
     }
 
     public void cronTaskMethod() {
-        String notificztion = NOTIFICATION + Calendar.getInstance().getTime();
-        emailService.sendEmail("registered.vm", prepareEmailModel(notificztion));
-        LOGGER.info("Cron notification sent by email: " + notificztion);
+        String notification = NOTIFICATION + Calendar.getInstance().getTime();
+        emailService.sendEmail("registered.vm", prepareEmailModel(notification));
+        LOGGER.info("Cron notification sent by email: " + notification);
     }
 
     private Map<String, Object> prepareEmailModel(String message) {

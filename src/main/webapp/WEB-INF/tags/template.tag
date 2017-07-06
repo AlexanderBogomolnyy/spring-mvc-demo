@@ -76,8 +76,12 @@
                         <li>
                             <a href="${jstl}"><b>Lesson 6.</b> JSTL in Spring</a>
                         </li>
+                        <c:url value="/redirectExample" var="redirect"/>
                         <li>
-                            <a href="./portfolio-1-col.html"><b>Lesson 7.</b></a>
+                            <a href="${redirect}"><b>Lesson 7.</b> Redirect. External resource</a>
+                        </li>
+                        <li>
+                            <a href="./portfolio-1-col.html"><b>Lesson 8.</b></a>
                         </li>
                     </ul>
                 </li>
