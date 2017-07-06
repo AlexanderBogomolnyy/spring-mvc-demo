@@ -90,14 +90,14 @@
     <!-- Quartz simple trigger -->
     <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
         <property name="jobDetail" ref="simpleQuartzJob" />
-        <property name="repeatInterval" value="3000" />
+        <property name="repeatInterval" value="30000" />
         <property name="startDelay" value="1000" />
     </bean>
     <!-- Quartz cron trigger -->
     <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="quartzCronJob"/>
-        <property name="cronExpression" value="* 0/7 * * * ?" />
-        <!-- every 30 seconds (seconds, minutes, hours, day of month, month, day of week, year(optional)) -->
+        <property name="cronExpression" value="0 0 0 1/1 * ? *" />
+        <!-- every day 00:00:00 (seconds, minutes, hours, day of month, month, day of week, year(optional)) -->
     </bean>
 
     <!-- Quartz job -->

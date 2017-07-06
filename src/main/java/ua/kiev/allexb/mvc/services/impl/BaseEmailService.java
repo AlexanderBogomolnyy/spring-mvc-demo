@@ -1,6 +1,8 @@
 package ua.kiev.allexb.mvc.services.impl;
 
 import org.apache.velocity.app.VelocityEngine;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -16,6 +18,8 @@ import java.util.Map;
 
 @Service
 public class BaseEmailService implements EmailService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaseEmailService.class);
 
     /*Email From*/
     public static final String FROM = "from";
@@ -64,15 +68,13 @@ public class BaseEmailService implements EmailService {
 
                     message.setText(text, true);
                 }
-            };
 
+            };
             mailSender.send(preparator);
             res = true;
-
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOGGER.error("Email haven't been send. More details : ", ex);
         }
-
         return res;
     }
 
