@@ -30,8 +30,9 @@
             <c:url value="/email.html" var="email"/>
             <c:url value="/rest.html" var="rest"/>
             <c:url value="/orm.html" var="orm"/>
-            <c:url value="/runtimeException" var="runtimeException"/>
+            <c:url value="/runtimeException" var="exception"/>
             <c:url value="/jstl.html" var="jstl"/>
+            <c:url value="/redirectExample" var="redirect"/>
             <c:url value="/scope.html" var="scope"/>
             <c:url value="/cookie.html" var="cookie"/>
             <c:url value="/security.html" var="security"/>
@@ -53,34 +54,37 @@
                                 Tutorial
                                 <ul>
                                     <li>
-                                        <a href="${file}">Загрузка файла PDF и Excel</a>
+                                        <a href="${file}"><b>Lesson 1.</b> File download example</a>
                                     </li>
                                     <li>
-                                        <a href="${jdbc}">JDBC c JDBCTemplates</a>
+                                        <a href="${jdbc}"><b>Lesson 2.</b> Spring JDBC example</a>
                                     </li>
                                     <li>
-                                        <a href="${email}">Java Email API and Spring Mail</a>
+                                        <a href="${email}"><b>Lesson 3.</b> Send Email example</a>
                                     </li>
                                     <li>
-                                        <a href="${rest}">Rest Services</a>
+                                        <a href="${orm}"><b>Lesson 4.</b> ORM example</a>
                                     </li>
                                     <li>
-                                        <a href="${orm}">Spring MVC и Hibernate 5</a>
+                                        <a href="${rest}"><b>Lesson 4.</b> REST example</a>
                                     </li>
                                     <li>
-                                        <a href="${runtimeException}">Runtime Exception</a>
+                                        <a href="${exception}"><b>Lesson 5.</b> Runtime Exception example</a>
                                     </li>
                                     <li>
-                                        <a href="${jstl}">JSTL Example</a>
+                                        <a href="${jstl}"><b>Lesson 6.</b> JSTL in Spring</a>
                                     </li>
                                     <li>
-                                        <a href="${scope}">Session Object Example</a>
+                                        <a href="${redirect}"><b>Lesson 7.</b> Redirect. External resource</a>
                                     </li>
                                     <li>
-                                        <a href="${cookie}">Работа с cookie</a>
+                                        <a href="${scope}"><b>Lesson 8.</b> Bean scopes</a>
                                     </li>
                                     <li>
-                                        <a href="${security}">Spring Security</a>
+                                        <a href="${cookie}"><b>Lesson 9.</b> Work with Cookie example</a>
+                                    </li>
+                                    <li>
+                                        <a href="${security}"><b>Lesson 10.</b> Spring Security</a>
                                     </li>
                                 </ul>
                             </li>

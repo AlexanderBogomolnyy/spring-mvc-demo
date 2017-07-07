@@ -31,13 +31,27 @@
                     <p>Пример загрузки файла с помощью Spring MVC </p>
                     <form action="${fileUploadControllerURL}" method="post"
                           enctype="multipart/form-data">
-                        <table>
-                            <tr>
-                                <td><b>File:</b></td>
-                                <td><input type="file" name="file"></td>
-                                <td><input type="submit" value="загрузить файл"></td>
-                            </tr>
-                        </table>
+                        <div class="row justify-content-start">
+                            <div class="col-lg-5 col-md-7 col-sm-9">
+                                <h4>Input file for download here</h4>
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                        <span class="btn btn-primary">
+                                            Browse&hellip; <input type="file" name="file" style="display: none;">
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                <span class="help-block">
+                                    Try selecting file and submit it
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row justify-content-start">
+                            <div class="col-lg-2 col-md-3 col-sm-4">
+                                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit file">
+                            </div>
+                        </div>
                     </form>
 
                     <br/>

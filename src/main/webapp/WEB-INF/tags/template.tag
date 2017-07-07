@@ -102,13 +102,13 @@
                         <li>
                             <a href="${redirect}"><b>Lesson 7.</b> Redirect. External resource</a>
                         </li>
-                        <c:url value="/scopeSession" var="scope"/>
+                        <c:url value="/scope.html" var="scope"/>
                         <li>
                             <a href="${scope}"><b>Lesson 8.</b> Bean scopes</a>
                         </li>
-                        <c:url value="/readCookie" var="cookies"/>
+                        <c:url value="/cookie.html" var="cookies"/>
                         <li>
-                            <a href="${cookies}"><b>Lesson 9.</b> Cookie example</a>
+                            <a href="${cookies}"><b>Lesson 9.</b> Work with Cookie example</a>
                         </li>
                         <c:url value="/security.html" var="security" />
                         <li>
@@ -143,6 +143,10 @@
 <!-- Bootstrap Core JavaScript -->
 <spring:url value="/resources/js/bootstrap.min.js" var="js"/>
 <script src="${js}"></script>
+
+<!-- Custom JavaScript-->
+<spring:url value="/resources/js/main.js" var="main"/>
+<script src="${main}"></script>
 
 </body>
 
