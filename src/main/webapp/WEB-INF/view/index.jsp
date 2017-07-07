@@ -107,6 +107,7 @@
             <c:url value="/email.html" var="email"/>
             <c:url value="/orm.html" var="orm"/>
             <c:url value="/runtimeException" var="runtimeException"/>
+            <c:url value="/security.html" var="security" />
             <!-- Portfolio Section -->
             <div class="row">
                 <div class="col-lg-12">
@@ -144,7 +145,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <a href="portfolio-item.html">
+                    <a href="${security}">
                         <img class="img-responsive img-portfolio img-hover"
                              src="${pageContext.request.contextPath}/resources/images/spring-security.png" alt="">
                     </a>

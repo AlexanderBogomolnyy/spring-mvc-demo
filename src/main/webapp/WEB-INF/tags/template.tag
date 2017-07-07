@@ -2,6 +2,7 @@
 <%@tag description="Template Site tag" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <%@attribute name="title" fragment="true" %>
 
@@ -43,6 +44,27 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <security:authorize access= "hasAnyRole('ROLE_ADMIN','ROLE_SUPER_USER', 'ROLE_USER')" var= "isUser"/>
+
+                <c:if test= "${not isUser}">
+                    <li style= "padding-top: 15px; padding-bottom: 15px; color: red">
+                        <c:if test= "${empty param.error}">
+                            Вы не вошли в приложение
+                        </c:if>
+                    </li>
+                    <li> <a style= "color: Green;" href= "<c:url value= "/login.html"/>">Login</a> </li>
+                </c:if>
+
+                <c:if test= "${isUser}">
+                    <li style= "padding-top: 15px; padding-bottom: 15px; color: green">
+                        Вы вошли как:
+                        <security:authentication property= "principal.username"/> с ролью:
+                        <b><security:authentication property= "principal.authorities"/></b>
+
+                    </li>
+                    <li> <a style= "color: red;" href= "<c:url value= "/j_spring_security_logout"/>">Logout</a> </li>
+                </c:if>
+
                 <c:url value="/about.html" var="about"/>
                 <li><a href="${about}">About</a></li>
                 <li class="dropdown">
@@ -80,16 +102,17 @@
                         <li>
                             <a href="${redirect}"><b>Lesson 7.</b> Redirect. External resource</a>
                         </li>
-                        <c:url value="/scopeSession" var="scope"/>
+                        <c:url value="/scope.html" var="scope"/>
                         <li>
                             <a href="${scope}"><b>Lesson 8.</b> Bean scopes</a>
                         </li>
-                        <c:url value="/readCookie" var="cookies"/>
+                        <c:url value="/cookie.html" var="cookies"/>
                         <li>
-                            <a href="${cookies}"><b>Lesson 9.</b> Cookie example</a>
+                            <a href="${cookies}"><b>Lesson 9.</b> Work with Cookie example</a>
                         </li>
+                        <c:url value="/security.html" var="security" />
                         <li>
-                            <a href="./portfolio-1-col.html"><b>Lesson 10.</b></a>
+                            <a href="${security}"><b>Lesson 10.</b> Spring Security</a>
                         </li>
                     </ul>
                 </li>
@@ -120,6 +143,10 @@
 <!-- Bootstrap Core JavaScript -->
 <spring:url value="/resources/js/bootstrap.min.js" var="js"/>
 <script src="${js}"></script>
+
+<!-- Custom JavaScript-->
+<spring:url value="/resources/js/main.js" var="main"/>
+<script src="${main}"></script>
 
 </body>
 
