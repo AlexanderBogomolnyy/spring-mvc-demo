@@ -9,7 +9,7 @@
     <jsp:body>
         <!-- Page Content -->
         <div class="container">
-
+            <c:url value="/index.html" var="home"/>
             <!-- Page Heading/Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-12">
@@ -17,7 +17,7 @@
                         <small>Subheading</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a>
+                        <li><a href="${home}">Home</a>
                         </li>
                         <li class="active">About</li>
                     </ol>

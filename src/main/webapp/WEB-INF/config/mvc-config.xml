@@ -5,6 +5,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:security= "http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/mvc
@@ -14,7 +15,9 @@
 	   http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/task
-       http://www.springframework.org/schema/task/spring-task.xsd">
+       http://www.springframework.org/schema/task/spring-task.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
 
     <!-- context:component-scan This tag will scan @Component, @Repository, @Service, @Controller
          and also resolves @Autowired and @Qualifier -->
@@ -58,13 +61,20 @@
         </property>
     </bean>
 
+    <mvc:view-controller path="/" view-name="/index"/>
     <mvc:view-controller path="/index.html" view-name="/index"/>
+    <mvc:view-controller path="/login.html" view-name="/form/login"/>
     <mvc:view-controller path="/about.html" view-name="/about/about"/>
     <mvc:view-controller path="/file.html" view-name="/file/file"/>
     <mvc:view-controller path="/jdbc.html" view-name="/jdbc/jdbc"/>
     <mvc:view-controller path="/email.html" view-name="/email/email"/>
     <mvc:view-controller path="/rest.html" view-name="/rest/rest"/>
     <mvc:view-controller path="/orm.html" view-name="/orm/orm"/>
+    <mvc:view-controller path="/jstl.html" view-name="/jstl/jstl"/>
+    <mvc:view-controller path="/scope.html" view-name="/scope/scope"/>
+    <mvc:view-controller path="/cookie.html" view-name="/cookie/cookie"/>
+    <mvc:view-controller path="/security.html" view-name="/security/security"/>
+    <mvc:view-controller path="/security/admin.html" view-name="/security/admin"/>
 
     <mvc:interceptors>
         <mvc:interceptor>
@@ -74,5 +84,10 @@
             <bean class="ua.kiev.allexb.mvc.interceptors.SiteInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <!--Spring security enabled annotations-->
+    <security:global-method-security pre-post-annotations= "enabled"
+                                     secured-annotations= "enabled"
+                                     jsr250-annotations= "enabled"/>
 
 </beans>
